@@ -1,6 +1,6 @@
 import { useStore, actions } from '../store';
 import TodoForm from './TodoForm';
-import { RiCloseCircleLine } from 'react-icons/ri';
+import { RiCloseCircleLine , RiCheckboxCircleFill } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 
 function Todo() {
@@ -23,10 +23,10 @@ function Todo() {
     return todos.map((item) => (
         <div
             className={item.isComplete ? 'todo-row complete' : 'todo-row'}
-            key={item.id}>
+            key={item.id}
+        >
             <div
                 key={item.id}
-                onClick={() => handleComplete(item.id)}
             >
                 {item.work}
             </div>
@@ -34,6 +34,10 @@ function Todo() {
                 null
                 :
                 (<div className='icons'>
+                    <RiCheckboxCircleFill
+                        onClick={() => handleComplete(item.id)}
+                        className='delete-icon'
+                    />
                     <RiCloseCircleLine
                         onClick={() => dispatch(actions.removeTodo(item.id))}
                         className='delete-icon'

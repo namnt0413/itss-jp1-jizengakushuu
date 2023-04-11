@@ -5,7 +5,7 @@ import TodoForm from './components/TodoForm';
 function App() {
   return (
     <div className="todo-app">
-      <h1>Todo list app</h1>
+      <h1>ToDoアプリ</h1>
       <TodoForm />
       <Todo />
     </div>

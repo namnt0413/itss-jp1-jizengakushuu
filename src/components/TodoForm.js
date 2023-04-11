@@ -34,7 +34,7 @@ function TodoForm({ edit, setEdit }) {
                 (<>
                     <input
                         className='todo-input edit'
-                        placeholder='Update your item'
+                        placeholder='ToDoを変更'
                         value={todoInputEdit}
                         name='text'
                         ref={inputRef}
@@ -45,13 +45,13 @@ function TodoForm({ edit, setEdit }) {
                     <button
                         onClick={handleUpdate}
                         className='todo-button edit'>
-                        Update
+                        変更
                     </button>
                 </>) :
                 (<>
                     <input
                         className='todo-input'
-                        placeholder="Enter todo..."
+                        placeholder="ToDoを入力…"
                         value={todoInput}
                         name='text'
                         ref={inputRef}
@@ -59,7 +59,7 @@ function TodoForm({ edit, setEdit }) {
                             dispatch(actions.setToDoInput(e.target.value));
                         }}
                     />
-                    <button className='todo-button' onClick={handleAdd}>Add todo</button>
+                    <button className='todo-button' onClick={handleAdd}>新しいToDo追加</button>
                 </>)
             }
         </form>

@@ -67,7 +67,7 @@ function reducer(state, action) {
 
         case REMOVE_TODO: {
             const newTodos = [...state.todos];
-            const index = newTodos.findIndex(item => item.id === action.payload.id);
+            const index = newTodos.findIndex(item => item.id === action.payload);
             if (index !== 0) newTodos.splice(index, 1);
             return { ...state, todos: [...newTodos] }
         }
